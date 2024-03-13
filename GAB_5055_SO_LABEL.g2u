@@ -1,0 +1,451 @@
+Program.Sub.ScreenSU.Start
+Gui.Form1..create
+Gui.Form1..caption("SO Selection")
+Gui.Form1..size(4785,4515)
+Gui.Form1..minx(0)
+Gui.Form1..miny(0)
+Gui.Form1..position(0,0)
+Gui.Form1..forecolor(0)
+Gui.Form1..BackColor(-2147483633)
+Gui.Form1..mousepointer(0)
+Gui.Form1..Event(UnLoad,cmdcancel_click)
+Gui.Form1.txtStartSO.create(textbox,"",True,1215,300,0,480,1140,True,0,Arial,8,-2147483643,1)
+Gui.Form1.txtStartSO.defaultvalue("")
+Gui.Form1.txtStartSO.TabStop(True)
+Gui.Form1.txtStartSO.TabIndex(3)
+Gui.Form1.txtStartSO.ControlGroup(1)
+Gui.Form1.txtEndSO.create(textbox,"",True,1215,300,0,2610,1170,True,0,Arial,8,-2147483643,1)
+Gui.Form1.txtEndSO.defaultvalue("")
+Gui.Form1.txtEndSO.TabStop(True)
+Gui.Form1.txtEndSO.TabIndex(5)
+Gui.Form1.txtEndSO.ControlGroup(1)
+Gui.Form1.lblStartBin.create(label,"Starting SO #",True,1290,255,1,405,900,True,0,Arial,8,-2147483633,0)
+Gui.Form1.lblStartBin.defaultvalue("")
+Gui.Form1.luStartSO.create(button)
+Gui.Form1.luStartSO.caption("^")
+Gui.Form1.luStartSO.size(375,375)
+Gui.Form1.luStartSO.position(1680,1110)
+Gui.Form1.luStartSO.event(Click,lustartso_click)
+Gui.Form1.luStartSO.defaultvalue("")
+Gui.Form1.luStartSO.TabStop(True)
+Gui.Form1.luStartSO.TabIndex(4)
+Gui.Form1.lblEndBin.create(label,"Ending SO #",True,1305,255,1,2580,930,True,0,Arial,8,-2147483633,0)
+Gui.Form1.lblEndBin.defaultvalue("")
+Gui.Form1.luEndSO.create(button)
+Gui.Form1.luEndSO.caption("^")
+Gui.Form1.luEndSO.size(390,375)
+Gui.Form1.luEndSO.position(3810,1125)
+Gui.Form1.luEndSO.event(Click,luendso_click)
+Gui.Form1.luEndSO.defaultvalue("")
+Gui.Form1.luEndSO.TabStop(True)
+Gui.Form1.luEndSO.TabIndex(6)
+Gui.Form1.cmdPrint.create(button)
+Gui.Form1.cmdPrint.caption("Print")
+Gui.Form1.cmdPrint.size(855,375)
+Gui.Form1.cmdPrint.position(945,3285)
+Gui.Form1.cmdPrint.event(Click,cmdprint_click)
+Gui.Form1.cmdPrint.defaultvalue("")
+Gui.Form1.cmdPrint.TabStop(True)
+Gui.Form1.cmdPrint.TabIndex(10)
+Gui.Form1.cmdCancel.create(button)
+Gui.Form1.cmdCancel.caption("Cancel")
+Gui.Form1.cmdCancel.size(855,375)
+Gui.Form1.cmdCancel.position(3240,3285)
+Gui.Form1.cmdCancel.event(Click,cmdcancel_click)
+Gui.Form1.cmdCancel.defaultvalue("")
+Gui.Form1.cmdCancel.TabStop(True)
+Gui.Form1.cmdCancel.TabIndex(11)
+Gui.Form1.lbl3.create(label,"Print SO Carton Labels",True,3690,255,1,405,195,True,0,Arial,12,-2147483633,0)
+Gui.Form1.lbl3.fontstyle(True,False,False,False,False)
+Gui.Form1.lbl3.defaultvalue("")
+Gui.Form1.lbl3.Event(Click,lbl3_Click)
+Gui.Form1.txtATTN.create(textbox,"",True,2835,300,0,1320,1785,True,0,Arial,8,-2147483643,1)
+Gui.Form1.txtATTN.defaultvalue("")
+Gui.Form1.txtATTN.TabStop(True)
+Gui.Form1.txtATTN.TabIndex(7)
+Gui.Form1.txtATTN.ControlGroup(1)
+Gui.Form1.lblATTN.create(label,"ATTN",True,690,255,1,330,1920,True,0,Arial,8,-2147483633,0)
+Gui.Form1.lblATTN.defaultvalue("")
+Gui.Form1.txtDEPT.Create(TextBox,"",True,2835,300,0,1320,2130,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtDEPT.TabStop(True)
+Gui.Form1.txtDEPT.TabIndex(8)
+Gui.Form1.txtDEPT.ControlGroup(1)
+Gui.Form1.lblDEPT.Create(Label,"DEPT",True,615,255,0,330,2235,True,0,"Arial",8,-2147483633,0)
+Gui.Form1.lblCategory.Create(Label,"CATEGORY",True,960,255,0,330,2550,True,0,"Arial",8,-2147483633,0)
+Gui.Form1.txtcategory.Create(TextBox,"",True,2835,300,0,1320,2475,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtcategory.TabStop(True)
+Gui.Form1.txtcategory.TabIndex(9)
+Gui.Form1.txtcategory.ControlGroup(1)
+Gui.Form1.txtcustomer.Create(TextBox,"",True,1215,300,0,1065,480,True,0,"Arial",8,-2147483643,1)
+Gui.Form1.txtcustomer.TabStop(True)
+Gui.Form1.txtcustomer.TabIndex(1)
+Gui.Form1.txtcustomer.ControlGroup(1)
+Gui.Form1.lblcustomer.Create(Label,"Cust#",True,585,255,0,420,525,True,0,"Arial",8,-2147483633,0)
+Gui.Form1.luCustomer.Create(Button)
+Gui.Form1.luCustomer.Size(375,375)
+Gui.Form1.luCustomer.Position(2250,450)
+Gui.Form1.luCustomer.TabStop(True)
+Gui.Form1.luCustomer.TabIndex(2)
+Gui.Form1.luCustomer.Caption("^")
+Gui.Form1.luCustomer.DefaultValue("")
+Gui.Form1.luCustomer.Event(Click,lucustomer_click)
+Gui.Form1.chkLines.Create(CheckBox)
+Gui.Form1.chkLines.Size(1560,360)
+Gui.Form1.chkLines.Position(2850,450)
+Gui.Form1.chkLines.Caption("By Line Item")
+Gui.Form1.chkLines.Event(Click,chkLines_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Variable.Global.sStartBin.Declare(String)
+Variable.Global.sEndBin.Declare(String)
+Variable.UDT.uBin.Define("BIN",String,BIN)
+Variable.UDT.uBin.Define("LOCATION",String,LOCATION)
+Variable.UDT.uBin.Define("BIN_DESCRIPTION",String,BIN_DESCRIPTION)
+Variable.uGlobal.uBin.Declare("uBin")
+Variable.Global.BIRunID.Declare(Long,0)
+Variable.Global.BILogID.Declare(Long,0)
+Variable.Global.sLoc.Declare(String)
+V.Global.sATTN.Declare(String)
+v.Global.sDEPT.Declare(String)
+v.Global.scategory.Declare(String)
+V.Global.sCUSTOMER.Declare(string)
+V.Global.sStartSO.Declare(String)
+v.Global.sEndSO.Declare(String)
+v.Global.bLines.Declare(boolean)
+v.Global.sLines.Declare(String)
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+gui.Form1.chkLines.Value(1)
+v.Global.bLines.Set(True)
+
+Gui.Form1..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+V.Local.sCon.Declare(String)
+
+Program.Sub.Main.End
+
+Program.Sub.lustartso_click.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+
+'select the starting SO NO
+F.Intrinsic.String.Build("select ORDER_NO, CUSTOMER  FROM V_ORDER_HEADER WHERE CUSTOMER = '{0}' ORDER BY ORDER_NO",V.Screen.Form1!txtcustomer.TEXT,V.Local.sSql)
+'V.Local.sSql.Set("select ORDER_NO, CUSTOMER ")
+'F.Intrinsic.String.Concat(V.Local.sSql,"from V_ORDER_HEADER where CUSTOMER = '",V.Screen.Form1!txtcustomer.Text,"'"," ORDER BY ORDER_NO",V.Local.sSql)
+F.ODBC.Connection!conx.OPENCOMPANYCONNECTION
+F.Intrinsic.String.Split("ORDER_NO*!*CUSTOMER","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("100*!*100","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.MiniBrowser("Select Starting SO #","conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,"=",V.Ambient.CANCEL)
+	F.Intrinsic.UI.Msgbox("No SO was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form1.txtStartSO.Text(V.Local.sRet(0))
+	gui.Form1.txtEndSO.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.lustartso_click.End
+
+Program.Sub.luendso_click.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+v.Local.sMessage.Declare(String)
+
+
+F.ODBC.Connection!conx.OPENCOMPANYCONNECTION
+'select the ending SO NO or the Line Number based on the form Checkbox
+'f.Intrinsic.Control.If(v.Global.bLines)
+'	F.Intrinsic.String.Build("SELECT RECORD_NO, PART, DESCRIPTION, CAST(QTY_ORDERED AS INTEGER) AS QUANTITY FROM V_ORDER_LINES WHERE ORDER_NO = '{0}' ORDER BY RECORD_NO",V.Screen.Form1!txtStartSO.TEXT,V.Local.sSql)
+'	F.Intrinsic.String.Split("LINE*!*PART*!*DESCRIPTION*!*QTY","*!*",v.Local.sTitles)
+'	F.Intrinsic.String.Split("100*!*100*!*200*!*50","*!*",V.Local.iWidths)
+'	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'	f.Intrinsic.UI.Browser("Select Line Number","conx",v.Local.sSql,v.Local.sTitles,v.Local.iWidths,v.Local.sRet)
+'	v.Local.sMessage.Set("No Line was selected")
+'f.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("select ORDER_NO, CUSTOMER FROM V_ORDER_HEADER WHERE CUSTOMER = '{0}' ORDER BY ORDER_NO",V.Screen.Form1!txtcustomer.TEXT,V.Local.sSql)
+	F.Intrinsic.String.Split("ORDER_NO*!*CUSTOMER","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("100*!*100","*!*",V.Local.iWidths)
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Starting ORDER #","conx",V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+	v.Local.sMessage.Set("No Order was selected")
+'f.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.Close
+
+
+F.Intrinsic.Control.If(V.Local.sRet,"=",V.Ambient.CANCEL)
+	F.Intrinsic.UI.Msgbox(v.Local.sMessage)
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form1.txtEndSO.Text(V.Local.sRet(0))
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.luendso_click.End
+
+Program.Sub.cmdprint_click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdprint_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sSql2.Declare(String)
+V.Local.sElementList.Declare(String)
+V.Local.iBIRptID.Declare(Long)
+V.Local.sfilename.Declare(String)
+
+V.Global.sStartSO.Set(V.Screen.Form1!txtStartSO.Text)
+V.Global.sEndSO.Set(V.Screen.Form1!txtEndSO.Text)
+V.Global.sATTN.Set(V.Screen.Form1!txtATTN.Text)
+V.Global.sDEPT.Set(V.Screen.Form1!txtDEPT.Text)
+V.Global.scategory.Set(V.Screen.Form1!txtcategory.text)
+V.Global.sCUSTOMER.Set(V.Screen.Form1!txtcustomer.Text)
+'select by lines
+F.Intrinsic.Control.If(V.Global.bLines)
+	F.Intrinsic.Control.CallSub(getlines)
+F.Intrinsic.Control.EndIf
+
+'Get run ID
+F.Global.BI.GetRunID(V.Global.BIRunID)
+f.Intrinsic.String.Build("GAB_5055_{0}_SO_LABEL.lab",V.Global.sCUSTOMER.Trim,V.Local.sfilename)
+'f.Intrinsic.String.Concat("GAB_5055_",V.Global.sCUSTOMER.TRIM,"_SO_LABEL.lab",V.Local.sfilename)
+F.Global.BI.GetIDFromName(V.Local.sfilename,V.Local.iBIRptID)
+'Starting BI Logging
+F.Global.BI.StartLogging(V.Global.BIRunID,V.Local.iBIRptID,-1,"",V.Global.BILogID)
+
+'Gui.Form1..Visible(false)
+
+F.Intrinsic.String.Build("select VOH.ORDER_NO,VOH.CUSTOMER,VOH.CUSTOMER_PO,VOH.USER_1,VOH.USER_2,VOH.USER_3,VOH.USER_4,VOH.USER_5,VOL.SHIP_ID,VOL.PART,VOL.CUSTOMER_PART AS CUST_PART,VOL.LOCATION,VOL.DESCRIPTION,VINV2.DESCRIPTION_2 AS ALT_DESCR_1,VOL.QTY_ORDERED, VINV3.PCS_PER_CNTNR AS QTY_PER_CARTON,  IF(VINV3.PCS_PER_CNTNR= 0,VOL.QTY_ORDERED,FLOOR((VOL.QTY_ORDERED/VINV3.PCS_PER_CNTNR))) AS LABEL_COPY,VOL.RECORD_NO AS LINE from V_ORDER_HEADER VOH LEFT OUTER JOIN V_ORDER_LINES VOL ON VOH.ORDER_NO=VOL.ORDER_NO LEFT OUTER JOIN V_INVENTORY_MST2 VINV2 ON VOL.PART=VINV2.PART AND VOL.LOCATION=VINV2.LOCATION LEFT OUTER JOIN V_INVENTORY_MST3 VINV3 ON VOL.PART=VINV3.PART AND VOL.LOCATION=VINV3.LOCATION WHERE VINV3.PCS_PER_CNTNR<=VOL.QTY_ORDERED AND VOH.ORDER_NO >= '{0}' AND VOH.ORDER_NO <= '{1}' AND VOH.CUSTOMER = '{2}'",V.Global.sStartSO,V.Global.sEndSO,V.Global.sCUSTOMER,V.Local.sSql)
+f.odbc.connection!conx.opencompanyconnection
+'F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+f.data.DataTable.CreateFromSQL("LabelTemp","conx",v.Local.sSql)
+'find partial carton labels
+F.Intrinsic.String.Build("select VOH.ORDER_NO,VOH.CUSTOMER,VOH.CUSTOMER_PO,VOH.USER_1,VOH.USER_2,VOH.USER_3,VOH.USER_4,VOH.USER_5,VOL.SHIP_ID,VOL.PART,VOL.CUSTOMER_PART AS CUST_PART,VOL.LOCATION,VOL.DESCRIPTION,VINV2.DESCRIPTION_2 AS ALT_DESCR_1,VOL.QTY_ORDERED, (VOL.QTY_ORDERED-(VINV3.PCS_PER_CNTNR*(FLOOR((VOL.QTY_ORDERED/VINV3.PCS_PER_CNTNR))))) AS QTY_PER_CARTON,  1 AS LABEL_COPY,VOL.RECORD_NO AS LINE from V_ORDER_HEADER VOH LEFT OUTER JOIN V_ORDER_LINES VOL ON VOH.ORDER_NO=VOL.ORDER_NO LEFT OUTER JOIN V_INVENTORY_MST2 VINV2 ON VOL.PART=VINV2.PART AND VOL.LOCATION=VINV2.LOCATION LEFT OUTER JOIN V_INVENTORY_MST3 VINV3 ON VOL.PART=VINV3.PART AND VOL.LOCATION=VINV3.LOCATION WHERE VINV3.PCS_PER_CNTNR > 0 AND (VOL.QTY_ORDERED-(VINV3.PCS_PER_CNTNR*(FLOOR((VOL.QTY_ORDERED/VINV3.PCS_PER_CNTNR)))))>0 AND VOH.ORDER_NO >= '{0}' AND VOH.ORDER_NO <= '{1}' AND VOH.CUSTOMER = '{2}'",V.Global.sStartSO,V.Global.sEndSO,V.Global.sCUSTOMER,V.Local.sSql2)
+f.data.DataTable.CreateFromSQL("LabelTemp2","conx",v.Local.sSql2)
+f.Data.DataTable.Merge("LabelTemp2","LabelTemp",true,2)
+F.Intrinsic.Control.If(V.DataTable.LabelTemp.Exists,=,True)
+	F.Intrinsic.Control.If(V.DataTable.LabelTemp.RowCount,>,0)		
+		F.Data.DataTable.AddColumn("LabelTemp","ATTN","String")
+		F.Data.DataTable.AddColumn("LabelTemp","CATEGORY","String")
+		F.Data.DataTable.AddColumn("LabelTemp","DEPT","String")
+		F.Intrinsic.Control.If(V.Global.bLines)
+			f.Data.DataTable.AddExpressionColumn("LabelTemp","LINEKEY","STRING","ORDER_NO + LINE")
+			f.Data.DataTable.AddColumn("LabelTemp","Print","Boolean",False)
+			f.Data.DataTable.FillFromDictionary("LabelTemp","LINES","LINEKEY","Print")
+		F.Intrinsic.Control.EndIf
+		F.Data.DataTable.SetValue("LabelTemp",-1,"ATTN",v.Global.sATTN)
+		F.Data.DataTable.SetValue("LabelTemp",-1,"CATEGORY",v.Global.scategory)
+		F.Data.DataTable.SetValue("LabelTemp",-1,"DEPT",v.Global.sDEPT)	
+		v.Local.sSort.Declare(String)
+		V.Local.sSort.Set("ORDER_NO ASC, LINE ASC, QTY_PER_CARTON ASC")
+		f.Intrinsic.Control.If(v.Global.bLines)
+			F.Data.DataView.Create("LabelTemp","dvLabelTemp",22,"PRINT = 'True'",v.Local.sSort)
+		f.Intrinsic.Control.Else
+			F.Data.DataView.Create("LabelTemp","dvLabelTemp",22,,v.Local.sSort)
+		f.Intrinsic.Control.EndIf
+		F.Data.DataView.ToDataTable("LabelTemp","dvLabelTemp","LabelTemp3")
+		
+		F.Global.BI.PrintCodesoftLabelFromDataTable(V.global.BIRunID,V.global.BILogID,"LabelTemp3","",True)
+		F.Data.DataTable.Close("LabelTemp3")
+		f.Data.DataView.Close("LabelTemp","dvLabelTemp")		
+	
+	F.Intrinsic.Control.EndIf
+	F.Data.DataTable.Close("LabelTemp")
+	F.Data.DataTable.Close("LabelTemp2")
+	F.Intrinsic.Control.If(V.Global.bLines)
+		f.Data.Dictionary.Close("LINES")
+	f.Intrinsic.Control.EndIf
+	F.ODBC.Connection!conx.Close
+	gui.Form1..ClearGroup(1)
+	gui.Form1.txtcustomer.Text("")
+	F.Intrinsic.Control.ExitSub
+F.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndIf
+
+
+
+F.Intrinsic.Control.Label("cmdprint_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdprint_click.End
+
+Program.Sub.cmdcancel_click.Start
+F.Intrinsic.Control.End
+
+Program.Sub.cmdcancel_click.End
+
+Program.Sub.lucustomer_click.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSql.Declare(String)
+V.Local.sTitles.Declare(String)
+V.Local.iWidths.Declare(Long)
+V.Local.sRet.Declare(String)
+
+
+'select the customer number
+V.Local.sSql.Set("select CUSTOMER, NAME_CUSTOMER ")
+F.Intrinsic.String.Concat(V.Local.sSql,"from V_CUSTOMER_MASTER",V.Local.sSql)
+f.odbc.connection!conx.opencompanyconnection
+F.Intrinsic.String.Split("CUSTOMER*!*NAME_CUSTOMER","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("100*!*150","*!*",V.Local.iWidths)
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.MiniBrowser("Select Customer #",conx,V.Local.sSql,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+F.ODBC.Connection!conx.Close
+
+F.Intrinsic.Control.If(V.Local.sRet,"=","***CANCEL***")
+	F.Intrinsic.UI.Msgbox("No Customer # was selected")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	gui.Form1.txtcustomer.Text(V.Local.sRet(0))	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.lucustomer_click.End
+
+Program.Sub.chkLines_Click.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+
+v.Global.bLines.Set(v.Screen.Form1!chkLines.checkedasboolean)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.chkLines_Click.End
+
+Program.Sub.txtEndSO_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+F.Intrinsic.Control.If(V.Global.bLines)
+	F.Intrinsic.Control.CallSub(getlines)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtEndSO_LostFocus.End
+
+Program.Sub.getlines.Start
+F.Intrinsic.Control.SetErrorHandler("lustartbin_click_Err")
+F.Intrinsic.Control.ClearErrors
+v.Local.sSql.Declare
+v.local.sLines.Declare
+v.Local.sFrags.Declare
+v.Local.bRet.Declare
+v.Local.iCount.Declare
+
+v.Global.sStartSO.Set(v.Screen.Form1!txtStartSO.text)
+v.Global.sEndSO.Set(v.Screen.Form1!txtEndSO.text)
+v.Global.sCUSTOMER.Set(v.Screen.Form1!txtcustomer.text)
+f.ODBC.Connection!coredb.opencompanyconnection
+f.Intrinsic.String.Build("select order_no, left(record_no,3) as line, part, qty_ordered as qty, (order_no + record_no) as LINEKEY from v_order_lines where customer = '{2}' and order_no between '{0}' and '{1}' ",v.Global.sStartSO.Trim,v.Global.sEndSO.Trim,v.Global.sCUSTOMER.Trim,v.Local.sSql)
+f.Intrinsic.UI.SetBrowserMultiSelect(True)
+f.Intrinsic.UI.Browser("Select Lines","coredb",v.Local.sSql,"ORDER*!*LINE*!*PART*!*QTY*!*KEY","50*!*50*!*70*!*50*!*1",v.Local.sLines)
+F.ODBC.Connection!coredb.Close
+f.Data.Dictionary.Create("LINES")
+f.Intrinsic.Control.If(v.Local.sLines,<>,v.Ambient.cancel)
+	F.Intrinsic.String.IsInString(V.Local.sLines,"!*!",False,v.Local.bRet)
+	f.Intrinsic.Control.If(v.Local.bRet)
+		f.Intrinsic.String.Split(v.Local.sLines,"!*!",v.Local.sLines)
+		f.Intrinsic.Control.For(v.Local.iCount,0,v.Local.sLines.UBound,1)
+			f.Intrinsic.String.Split(v.Local.sLines(v.Local.iCount),"*!*",v.Local.sFrags)
+			F.Data.Dictionary.AddItem("LINES",V.Local.sFrags(4),True)				
+		f.Intrinsic.Control.Next(v.Local.iCount)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(V.Local.sLines,"*!*",V.Local.sFrags)
+		F.Data.Dictionary.AddItem("LINES",V.Local.sFrags(4),True)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+f.Data.Dictionary.SetDefaultReturn("LINES",False)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("lustartbin_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+Function.Intrinsic.String.Concat("Project: GAB_5055_SO_LABEL.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.getlines.End
+
+Program.Sub.lbl3_Click.Start
+Function.Intrinsic.Debug.InvokeDebugger
+Function.Intrinsic.Debug.Stop
+
+Program.Sub.lbl3_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_SO_LABEL$}$BSTEVENS$}$004/19/18
+Program.Sub.Comments.End
